@@ -1,0 +1,163 @@
+/*     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px; */
+
+/* ### Primary
+
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+ */
+
+ :root {
+    --main-color:  hsl(229, 6%, 66%);
+    --white-color: hsl(0, 0%, 100%);
+    --secondary-color: hsl(234, 12%, 34%);
+ }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+header {
+    width: 90%;
+    margin-top: 4rem;
+}
+
+header h1 {
+    color:  var(--main-color);
+    font-weight: 200;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+header h1 span {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+@media (min-width: 50rem) {
+    header {
+        width: min(90%, 31.25rem);
+    }
+}
+
+header p {
+    font-weight: 400;
+    text-align: center;
+    color: var(--main-color);
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.flex-main {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-main .grid-sec {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-areas: "supervisor"
+                         "teambuilder"
+                         "karma"
+                         "calculator";
+    gap: 1rem;
+}
+@media (min-width: 50rem) {
+    .flex-main .grid-sec {
+        grid-template-areas: ". teambuilder ."
+                             "supervisor teambuilder calculator"
+                              "supervisor karma calculator"
+                              ". karma .";
+        width: min(90%, 69.375rem);
+    }
+}
+
+.flex-main .grid-sec .card {
+    width: 100%;
+    background-color: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+
+@media (min-width: 50rem) {
+    .flex-main .grid-sec .card {
+        padding: 1.6rem;
+    }
+}
+
+.flex-main .grid-sec .card h3 {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    padding-bottom: 0.4rem;
+}
+
+.flex-main .grid-sec .card p {
+    color: var(--main-color);
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+.flex-main .grid-sec .card img {
+    max-width: 100%;
+    float: right;
+}
+
+.flex-main .grid-sec .supervisor {
+    border-top:   5px solid hsl(180, 62%, 55%);
+    grid-area: supervisor;
+}
+
+.flex-main .grid-sec .teambuilder {
+    border-top:   5px solid hsl(0, 78%, 62%);
+    grid-area: teambuilder;
+}
+
+.flex-main .grid-sec .karma {
+    border-top:   5px solid hsl(34, 97%, 64%);
+    grid-area: karma;
+}
+
+.flex-main .grid-sec .calculator {
+    border-top:   5px solid hsl(212, 86%, 64%);
+    grid-area: calculator;
+}
+
+footer {
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
